@@ -13,7 +13,7 @@ namespace dar
             if (ar.Length == 1)
                 return 0;
 
-            var counts = new Dictionary<int, KeyValuePair<int, int>>();
+            var counts = new Dictionary<int, (int, int)>();
             var half = ar.Length / 2;
             for (var c = 0; c < ar.Length; c++)
             {
@@ -23,10 +23,10 @@ namespace dar
                     (var k, var v) = counts[e];
                     if (v == half)
                         return k;
-                    counts[e] = new KeyValuePair<int, int>(k, v + 1);
+                    counts[e] = (k, v + 1);
                 }
                 else
-                    counts.Add(e, new KeyValuePair<int, int>(c, 1));
+                    counts.Add(e, (c, 1));
             }
 
             return -1;
