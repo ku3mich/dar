@@ -1,9 +1,6 @@
 ﻿namespace dar
 {
-    public class SimpleDominantTest : DominantTestBase
+    public class SimpleDominantTest : DominantTest<DarSimple>
     {
-        public SimpleDominantTest() : base(new DarSimple())
-        {
-        }
     }
 }

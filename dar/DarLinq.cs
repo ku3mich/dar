@@ -10,4 +10,14 @@ namespace dar
                 .SingleOrDefault(s => s.count > ar.Length / 2)?.i ?? -1;
     }
 
+    /*
+    public class LoopDar : IDar
+    {
+        public int GetDominantIndex(int[] ar)
+        {
+            
+            for (var i = 0; i < ar.Length - 1; i++ {
+            }
+        }
+    }*/
 }

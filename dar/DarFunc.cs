@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 
 namespace dar
 {
@@ -13,19 +12,18 @@ namespace dar
             if (ar.Length == 1)
                 return 0;
 
-            // copy
-            ar = ar.OrderBy(s => s).ToArray();
+            var ta = ar.Select((s, i) => (s, i)).OrderBy(s => s.s).ToArray();
 
             var half = ar.Length / 2;
 
             int count(int i)
             {
-                if (i >= ar.Length)
+                if (i >= ta.Length)
                     return 0;
 
-                var j = ar[i];
+                var j = ta[i].s;
                 var k = i + 1;
-                while (k < ar.Length && ar[k] == j)
+                while (k < ta.Length && ta[k].s == j)
                     k++;
 
                 return k - i;
@@ -35,7 +33,7 @@ namespace dar
             while ((l = count(j)) > 0)
             {
                 if (l > half)
-                    return j;
+                    return ta[j].i;
 
                 j += l;
             }

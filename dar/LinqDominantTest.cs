@@ -1,8 +1,8 @@
 ﻿namespace dar
 {
-    public class LinqDominantTest : DominantTestBase
+    public class LinqDominantTest : DominantTest<DarLinq>
     {
-        public LinqDominantTest() : base(new DarLinq())
+        public LinqDominantTest() 
         {
         }
     }

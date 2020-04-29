@@ -1,11 +1,7 @@
 ﻿namespace dar
 {
-    public class FuncDominantTest : DominantTestBase
+    public class FuncDominantTest : DominantTest<DarFunc>
     {
-        public FuncDominantTest() : base(new DarFunc())
-        {
-
-        }
     }
 
 }
